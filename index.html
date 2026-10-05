@@ -19,9 +19,31 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./IMAGES/Stasher-logo-.webp" />
-    <meta name="theme-color" content="#0a1030" />
+    <meta name="theme-color" content="#17212b" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"Person","name":"Calvin Kamara","alternateName":"STASHER / ckay.png","jobTitle":"Graphic Designer & Game Developer","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"knowsAbout":["Brand Identity","Poster Design","Blender 3D","UX/UI","Videography"],"sameAs":["https://github.com/kamara-png","https://www.linkedin.com/in/calvin-kamara-1b20b440b"]}
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Calvin Kamara",
+        "alternateName": "STASHER / ckay.png",
+        "jobTitle": "Graphic Designer & Game Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "knowsAbout": [
+          "Brand Identity",
+          "Poster Design",
+          "Blender 3D",
+          "UX/UI",
+          "Videography"
+        ],
+        "sameAs": [
+          "https://github.com/kamara-png",
+          "https://www.linkedin.com/in/calvin-kamara-1b20b440b"
+        ]
+      }
     </script>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -50,8 +72,20 @@
       >
         &times;
       </button>
-      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
-      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+      <button
+        class="lightbox-nav lightbox-prev"
+        id="lightbox-prev"
+        aria-label="Previous image"
+      >
+        &#8592;
+      </button>
+      <button
+        class="lightbox-nav lightbox-next"
+        id="lightbox-next"
+        aria-label="Next image"
+      >
+        &#8594;
+      </button>
       <figure class="lightbox-figure">
         <img
           class="lightbox-img"
@@ -62,7 +96,6 @@
         <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
         <div class="lightbox-meta">
           <span class="lightbox-counter" id="lightbox-counter"></span>
-          <a class="lightbox-download" id="lightbox-download" href="#" download>Download</a>
         </div>
       </figure>
     </div>
@@ -71,7 +104,7 @@
     <div class="dropdown-menu" id="dropdown-menu">
       <ul>
         <li><a href="#about" onclick="closeDropdown()">About</a></li>
-        <li><a href="#lab" onclick="closeDropdown()">Lab</a></li>
+        <li><a href="#lab" onclick="closeDropdown()">Labs</a></li>
         <li><a href="#posters" onclick="closeDropdown()">Poster Art</a></li>
         <li><a href="#logos" onclick="closeDropdown()">Logos</a></li>
         <li>
@@ -79,13 +112,19 @@
         </li>
         <li><a href="#mock-ups" onclick="closeDropdown()">Mock Ups</a></li>
         <li><a href="#promos" onclick="closeDropdown()">Promos</a></li>
-        <li><a href="#services" onclick="closeDropdown()">Services</a></li>
+        <!-- PRICES HIDDEN per feedback — uncomment to restore Services link <li><a href="#services" onclick="closeDropdown()">Services</a></li> -->
         <li><a href="#contact" onclick="closeDropdown()">Contact Me</a></li>
       </ul>
     </div>
 
     <!-- Hamburger (mobile only) -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="dropdown-menu">
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="dropdown-menu"
+    >
       &#9776;
     </button>
 
@@ -100,13 +139,13 @@
       <div class="nav-glass">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#lab">Lab</a></li>
+          <li><a href="#lab">Labs</a></li>
           <li><a href="#posters">Posters</a></li>
           <li><a href="#logos">Logos</a></li>
           <li><a href="#album-covers">Covers</a></li>
           <li><a href="#mock-ups">Mock Ups</a></li>
           <li><a href="#promos">Promos</a></li>
-          <li><a href="#services">Services</a></li>
+          <!-- PRICES HIDDEN per feedback — uncomment to restore Services link <li><a href="#services">Services</a></li> -->
         </ul>
         <a href="#contact" class="nav-contact-btn">Contact Me</a>
       </div>
@@ -116,14 +155,12 @@
     <section class="hero">
       <div class="glass hero-card" data-aos="fade-up">
         <div class="hero-left">
-          <span class="availability-badge"
-            ><span class="availability-dot"></span>Open for freelance , Nairobi
-            / Remote</span
-          >
-          <h2>
-            Graphic Designer
-            <span class="hero-accent">Game Developer</span>
-          </h2>
+          <h1 class="hero-title">
+            Calvin Kamara
+            <span class="hero-accent"
+              >Graphic Designer &amp; Game Developer</span
+            >
+          </h1>
           <p>Brand Identity • Posters • UX / UI • Videography</p>
           <button
             onclick="
@@ -164,11 +201,42 @@
     <!-- About / Journey -->
     <section id="about" class="about-section" data-aos="fade-up">
       <div class="glass about-card">
-        <div class="reveal">
+        <div class="about-head">
           <div class="section-label">About</div>
           <h2 class="section-title-left">
             Designer first,<br />building toward games.
           </h2>
+        </div>
+        <div class="reveal">
+          <!-- Professional portrait — add your photo at IMAGES/profile.webp to replace placeholder -->
+          <figure class="about-photo">
+            <div class="about-photo-frame">
+              <img
+                src="./IMAGES/profile.webp"
+                alt="Calvin Kamara — Graphic Designer portrait"
+                loading="lazy"
+                onerror="
+                  this.style.display = 'none';
+                  var f = this.parentElement.querySelector(
+                    '.about-photo-fallback',
+                  );
+                  if (f) f.style.display = 'flex';
+                "
+              />
+              <span
+                class="about-photo-fallback"
+                style="display: none"
+                aria-hidden="true"
+                >CK</span
+              >
+            </div>
+            <figcaption class="about-photo-caption">
+              <strong>Calvin Kamara</strong>
+              <span
+                >Graphic Designer &amp; Game Developer — Nairobi / Remote</span
+              >
+            </figcaption>
+          </figure>
           <p class="about-text">
             I started in brand identity, posters and album art under my creative
             brand <b>STASHER / ckay.png</b>, then moved into 3D, motion and
@@ -180,7 +248,6 @@
           <div class="about-tags">
             <span class="project-tag">Brand Identity</span>
             <span class="project-tag">Poster Design</span>
-            <span class="project-tag">Motion Graphics</span>
             <span class="project-tag">Blender 3D</span>
             <span class="project-tag">HTML / CSS / Python / C++</span>
           </div>
@@ -334,12 +401,18 @@
         <h3>What Clients Say</h3>
       </div>
       <div class="testi-carousel">
-        <button class="testi-arrow testi-prev" id="testi-prev" aria-label="Previous testimonials">&#8592;</button>
+        <button
+          class="testi-arrow testi-prev"
+          id="testi-prev"
+          aria-label="Previous testimonials"
+        >
+          &#8592;
+        </button>
         <div class="testimonials-grid testi-track" id="testi-track">
           <div class="testimonial-card glass">
             <p class="testimonial-text">
-              "Calvin completely transformed our brand. The logo he designed for Q
-              Lounge was exactly what we had imagined — clean, bold, and
+              "Calvin completely transformed our brand. The logo he designed for
+              Q Lounge was exactly what we had imagined clean, bold, and
               timeless."
             </p>
             <div class="testimonial-author">
@@ -354,8 +427,8 @@
           <div class="testimonial-card glass">
             <p class="testimonial-text">
               "Working with Calvin was seamless. He understood our vision for
-              Generation Now instantly and delivered something that felt fresh and
-              authentic."
+              Generation Now instantly and delivered something that felt fresh
+              and authentic."
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">
@@ -370,8 +443,8 @@
 
           <div class="testimonial-card glass">
             <p class="testimonial-text">
-              "The album cover Calvin created for us got more compliments than the
-              music itself. Incredibly talented and easy to work with."
+              "The album cover Calvin created for us got more compliments than
+              the music itself. Incredibly talented and easy to work with."
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">
@@ -398,7 +471,13 @@
             </div>
           </div>
         </div>
-        <button class="testi-arrow testi-next" id="testi-next" aria-label="Next testimonials">&#8594;</button>
+        <button
+          class="testi-arrow testi-next"
+          id="testi-next"
+          aria-label="Next testimonials"
+        >
+          &#8594;
+        </button>
       </div>
     </section>
 
@@ -413,10 +492,6 @@
           Full rebrand that feels upscale yet welcoming warm palette, custom
           typography and guidelines, applied to signage, embroidery and mockups.
         </p>
-        <p class="card-outcome">
-          Outcome: “Clean, bold, timeless” Owner, Q Lounge. See
-          <a href="#mock-ups">Mock Ups</a>.
-        </p>
       </div>
 
       <div class="glass card">
@@ -426,9 +501,6 @@
           Retro typography, chrome textures and high-contrast layouts authentic
           to Y2K, relevant today. Applied to backs and tees.
         </p>
-        <p class="card-outcome">
-          Deliverables: logo, apparel back print, promo posters.
-        </p>
       </div>
 
       <div class="glass card">
@@ -437,9 +509,6 @@
         <p class="card-desc">
           Soft, minimal identity with calming tones and clean layouts to signal
           trust and openness to a young audience.
-        </p>
-        <p class="card-outcome">
-          Outcome: “Fresh and authentic” Co-founder, Generation Now.
         </p>
       </div>
 
@@ -452,33 +521,23 @@
           Layered visuals, glitch aesthetics and experimental type my R&amp;D
           lab for digital art and identity, shared as @ckay.png.
         </p>
-        <p class="card-outcome">
-          Includes Clarence Matheny Ministries Bible College full identity +
-          guidelines PDF.
-        </p>
       </div>
     </section>
 
-    <!-- Lab (merged Projects + Game Lab: featured case + Tendo) -->
+    <!-- Labs (merged Projects + Game Lab: featured case + Tendo) -->
     <section id="lab" class="about-section" data-aos="fade-up">
       <div class="glass lab-panel">
         <div class="lab-head">
           <div>
-            <div class="section-label">Lab</div>
+            <div class="section-label">Labs</div>
             <h2 class="section-title-left">Selected work &amp; experiments.</h2>
             <p class="about-text">
-              The pieces I'm proudest of — a Blender case study plus an app
-              identity — with the full galleries below. 3D &amp; code bench
-              alongside KCA coursework.
+              The pieces I'm proud of a Blender case study plus an app identity.
             </p>
             <div class="about-tags">
-              <span class="project-tag">Blender 3D</span>
-              <span class="project-tag">Cycles</span>
-              <span class="project-tag">UX / App Identity</span>
-              <span class="project-tag">C++ / Python</span>
+              <span class="project-tag">UX / UI</span>
             </div>
           </div>
-          <a class="cv-download-btn cv-secondary lab-github" href="https://github.com/kamara-png" target="_blank" rel="noopener">GitHub — kamara-png</a>
         </div>
 
         <div class="lab-cards">
@@ -489,7 +548,6 @@
                 src="./IMAGES/porsche 3d model.jpg"
                 alt="Porsche realism redesign — Blender 3D render study"
               />
-              <span class="project-thumb-badge">Case study</span>
             </div>
             <div class="lab-card-body">
               <div class="project-cat">Blender • 3D Car Realism Study</div>
@@ -498,9 +556,7 @@
                 Ground-up automotive scene: proportion blocking, materials,
                 lighting and hero renders for a luxury concept.
               </p>
-              <span class="project-open-btn">
-                View case study <span class="project-arrow">→</span>
-              </span>
+              <span class="project-open-btn"> View case study </span>
             </div>
           </a>
 
@@ -520,32 +576,26 @@
               />
             </div>
             <div class="lab-card-body">
-              <div class="project-cat">UX / App Identity • Logo + Lockup + Icon</div>
+              <div class="project-cat">UX / UI • Logo</div>
               <div class="project-name">Tendo</div>
               <p class="project-desc">
-                App identity built to stay clean at small sizes — mark, full
-                lockup and app icon with a simple, friendly system.
-                EDIT ME: one line on what Tendo does + deliverables.
+                App identity built to stay clean at small sizes with a simple,
+                friendly system. Logo, lockup and app icon delivered with usage
+                mini-guide.
               </p>
               <div class="project-tags">
                 <span class="project-tag">Figma</span>
-                <span class="project-tag">Logo</span>
-                <span class="project-tag">App Icon</span>
               </div>
-              <span class="lab-card-cta">
-                <a class="cv-download-btn" href="#logos">More info in Logos →</a>
-              </span>
             </div>
           </div>
         </div>
-        <p class="lab-note">Porsche next: 10-sec turntable + wireframe vs shaded. Tendo next: Figma link + screens. Ask via contact.</p>
       </div>
     </section>
 
     <!-- Poster Art -->
     <section id="posters" class="panel">
       <div class="glass-section masonry-section" data-aos="fade-up">
-        <h1>Poster Art</h1>
+        <h2 class="gallery-title">Poster Art</h2>
         <div class="masonry-grid">
           <div class="masonry-item">
             <img
@@ -786,7 +836,7 @@
     <!-- Logos -->
     <section id="logos" class="panel">
       <div class="glass-section masonry-section" data-aos="fade-up">
-        <h1>Logos</h1>
+        <h2 class="gallery-title">Logos</h2>
         <div class="masonry-grid">
           <div class="masonry-item">
             <img
@@ -955,7 +1005,7 @@
     <!-- Album Covers -->
     <section id="album-covers" class="panel">
       <div class="glass-section masonry-section" data-aos="fade-up">
-        <h1>Album Covers</h1>
+        <h2 class="gallery-title">Album Covers</h2>
         <div class="masonry-grid">
           <div class="masonry-item">
             <img
@@ -1068,7 +1118,7 @@
     <!-- Mock Ups -->
     <section id="mock-ups" class="panel">
       <div class="glass-section masonry-section" data-aos="fade-up">
-        <h1>Mock Ups</h1>
+        <h2 class="gallery-title">Mock Ups</h2>
         <div class="masonry-grid">
           <div class="masonry-item">
             <img
@@ -1165,7 +1215,7 @@
     <!-- Promos -->
     <section id="promos" class="panel">
       <div class="glass-section masonry-section" data-aos="fade-up">
-        <h1>Promos</h1>
+        <h2 class="gallery-title">Promos</h2>
         <div class="masonry-grid">
           <div class="masonry-item">
             <img
@@ -1219,7 +1269,7 @@
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- PRICES HIDDEN per professional feedback — uncomment to restore Services & Pricing (kept, not deleted)
     <section id="services" class="services-section" data-aos="fade-up">
       <div class="section-title">
         <h3>Services & Pricing</h3>
@@ -1277,6 +1327,7 @@
         student rates <a href="#contact">ask me</a>.
       </p>
     </section>
+    END PRICES HIDDEN -->
 
     <!-- Process + FAQ -->
     <section id="process" class="process-section" data-aos="fade-up">
@@ -1301,7 +1352,7 @@
           <div class="process-step">
             <span class="process-num">03</span>
             <h4>Refine</h4>
-            <p>Revisions per tier, mockups + real-world tests.</p>
+            <p>Structured revisions, mockups + real-world tests.</p>
           </div>
           <div class="process-step">
             <span class="process-num">04</span>
@@ -1314,21 +1365,21 @@
             <summary>How fast is turnaround?</summary>
             <p>
               Posters 1–3 days, logos 3–7 days, full identity 1–3 weeks. Rush
-              available at +25%.
+              available on request.
             </p>
           </details>
           <details class="faq-item">
             <summary>How do payments work?</summary>
             <p>
-              50% M-Pesa deposit to start, balance on delivery. Prices in KSh —
-              Basic from 5k, Standard 10k, Premium 15k.
+              50% M-Pesa deposit to start, balance on delivery. Pricing on
+              request — <a href="#contact">ask me</a> for a quote.
+              <!-- PRICES HIDDEN: was "Prices in KSh — Basic from 5k, Standard 10k, Premium 15k." -->
             </p>
           </details>
           <details class="faq-item">
             <summary>Do I get source files?</summary>
             <p>
-              Yes, AI/PSD/Figma/Blend + exports + mini guidelines on Standard
-              and up.
+              Yes, AI/PSD/Figma/Blend + exports + mini guidelines on request.
             </p>
           </details>
           <details class="faq-item">
@@ -1352,15 +1403,18 @@
     <!-- Contact -->
     <section id="contact" class="contact-section">
       <div class="glass contact-card" data-aos="fade-up">
-        <h1>Let's Work Together</h1>
+        <h2 class="contact-title">Let's Work Together</h2>
         <p>
           Got a project in mind? Reach out through any of the platforms below.
+          Typically replies within 24 hours.
         </p>
         <div class="contact-icons">
           <a
             class="contact-link"
             href="https://wa.me/254141663900"
             target="_blank"
+            rel="noopener"
+            title="Chat on WhatsApp — verify number in WhatsApp first"
           >
             <div class="contact-icon-box">
               <img
@@ -1375,6 +1429,8 @@
             class="contact-link"
             href="https://instagram.com/ckay.png"
             target="_blank"
+            rel="noopener"
+            title="@ckay.png on Instagram — verify handle opens correctly"
           >
             <div class="contact-icon-box">
               <img
@@ -1390,6 +1446,7 @@
             href="https://mail.google.com/mail/?view=cm&fs=1&to=calvinkamarack@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            title="calvinkamarack@gmail.com — Gmail compose, or email directly via your mail app"
           >
             <div class="contact-icon-box">
               <img
@@ -1404,6 +1461,7 @@
             class="contact-link"
             href="https://www.linkedin.com/in/calvin-kamara-1b20b440b"
             target="_blank"
+            rel="noopener"
           >
             <div class="contact-icon-box">
               <img
@@ -1418,6 +1476,7 @@
             class="contact-link"
             href="https://github.com/kamara-png"
             target="_blank"
+            rel="noopener"
           >
             <div class="contact-icon-box">
               <img
@@ -1452,20 +1511,22 @@
       </div>
     </section>
 
-    <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+    <button class="back-top" id="back-top" aria-label="Back to top">
+      &#8593;
+    </button>
 
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-links">
           <a href="#about">About</a>
-          <a href="#lab">Lab</a>
-          <a href="#services">Services</a>
+          <a href="#lab">Labs</a>
+          <!-- PRICES HIDDEN per feedback — uncomment to restore <a href="#services">Services</a> -->
           <a href="#process">FAQ</a>
           <a href="#contact">Contact</a>
         </div>
         <p>
           © <span id="current-year"></span> Calvin Kamara • STASHER / ckay.png •
-          Nairobi, Kenya /remote worldwide.
+          Nairobi, Kenya.
         </p>
       </div>
     </footer>
@@ -1482,7 +1543,6 @@
       const lightboxImg = document.getElementById("lightbox-img");
       const lightboxCaption = document.getElementById("lightbox-caption");
       const lightboxCounter = document.getElementById("lightbox-counter");
-      const lightboxDownload = document.getElementById("lightbox-download");
       const closeBtn = document.getElementById("lightbox-close");
       const prevBtn = document.getElementById("lightbox-prev");
       const nextBtn = document.getElementById("lightbox-next");
@@ -1491,14 +1551,14 @@
 
       function collectGallery() {
         galleryImgs = Array.from(
-          document.querySelectorAll(".masonry-item img, .lab-card img")
+          document.querySelectorAll(".masonry-item img, .lab-card img"),
         );
       }
       function openLightbox(src, alt, caption) {
         collectGallery();
         lightboxIndex = Math.max(
           0,
-          galleryImgs.findIndex((im) => im.src === src)
+          galleryImgs.findIndex((im) => im.src === src),
         );
         showAt(lightboxIndex);
         overlay.classList.add("active");
@@ -1514,8 +1574,8 @@
         if (lightboxCaption)
           lightboxCaption.textContent = im.dataset.caption || im.alt || "";
         if (lightboxCounter)
-          lightboxCounter.textContent = lightboxIndex + 1 + " / " + galleryImgs.length;
-        if (lightboxDownload) lightboxDownload.href = im.src;
+          lightboxCounter.textContent =
+            lightboxIndex + 1 + " / " + galleryImgs.length;
       }
       function closeLightbox() {
         overlay.classList.remove("active");
@@ -1533,8 +1593,16 @@
         });
 
       closeBtn.addEventListener("click", closeLightbox);
-      if (prevBtn) prevBtn.addEventListener("click", (e) => { e.stopPropagation(); showAt(lightboxIndex - 1); });
-      if (nextBtn) nextBtn.addEventListener("click", (e) => { e.stopPropagation(); showAt(lightboxIndex + 1); });
+      if (prevBtn)
+        prevBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showAt(lightboxIndex - 1);
+        });
+      if (nextBtn)
+        nextBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showAt(lightboxIndex + 1);
+        });
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeLightbox();
       });
@@ -1545,50 +1613,70 @@
         if (e.key === "ArrowRight") showAt(lightboxIndex + 1);
       });
       let touchX = null;
-      overlay.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
-      overlay.addEventListener("touchend", (e) => {
-        if (touchX === null) return;
-        const dx = e.changedTouches[0].clientX - touchX;
-        if (dx > 40) showAt(lightboxIndex - 1);
-        if (dx < -40) showAt(lightboxIndex + 1);
-        touchX = null;
-      }, { passive: true });
+      overlay.addEventListener(
+        "touchstart",
+        (e) => {
+          touchX = e.touches[0].clientX;
+        },
+        { passive: true },
+      );
+      overlay.addEventListener(
+        "touchend",
+        (e) => {
+          if (touchX === null) return;
+          const dx = e.changedTouches[0].clientX - touchX;
+          if (dx > 40) showAt(lightboxIndex - 1);
+          if (dx < -40) showAt(lightboxIndex + 1);
+          touchX = null;
+        },
+        { passive: true },
+      );
 
       // Progress bar + back-to-top (additive)
       const backTop = document.getElementById("back-top");
-      window.addEventListener("scroll", () => {
-        const scrollTop = document.documentElement.scrollTop;
-        const scrollHeight =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        document.getElementById("progress-bar").style.width =
-          (scrollTop / scrollHeight) * 100 + "%";
-        if (backTop) backTop.classList.toggle("show", scrollTop > 600);
-      }, { passive: true });
-      if (backTop) backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrollTop = document.documentElement.scrollTop;
+          const scrollHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          document.getElementById("progress-bar").style.width =
+            (scrollTop / scrollHeight) * 100 + "%";
+          if (backTop) backTop.classList.toggle("show", scrollTop > 600);
+        },
+        { passive: true },
+      );
+      if (backTop)
+        backTop.addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" }),
+        );
 
       // Count-up stats (respects existing numbers)
       (function () {
         const nums = document.querySelectorAll(".stat-number");
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((en) => {
-            if (!en.isIntersecting) return;
-            const el = en.target;
-            io.unobserve(el);
-            const raw = el.textContent.trim();
-            const target = parseInt(raw.replace(/\D/g, ""), 10);
-            if (isNaN(target)) return;
-            const suffix = raw.replace(/[0-9]/g, "");
-            let start = null;
-            function step(ts) {
-              if (!start) start = ts;
-              const p = Math.min(1, (ts - start) / 900);
-              el.textContent = Math.round(target * p) + suffix;
-              if (p < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-          });
-        }, { threshold: 0.6 });
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((en) => {
+              if (!en.isIntersecting) return;
+              const el = en.target;
+              io.unobserve(el);
+              const raw = el.textContent.trim();
+              const target = parseInt(raw.replace(/\D/g, ""), 10);
+              if (isNaN(target)) return;
+              const suffix = raw.replace(/[0-9]/g, "");
+              let start = null;
+              function step(ts) {
+                if (!start) start = ts;
+                const p = Math.min(1, (ts - start) / 900);
+                el.textContent = Math.round(target * p) + suffix;
+                if (p < 1) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            });
+          },
+          { threshold: 0.6 },
+        );
         nums.forEach((n) => io.observe(n));
       })();
 
@@ -1605,15 +1693,23 @@
           const gap = parseFloat(getComputedStyle(track).gap) || 20;
           return card.getBoundingClientRect().width + gap;
         }
-        if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -cardStep(), behavior: "smooth" }));
-        if (next) next.addEventListener("click", () => track.scrollBy({ left: cardStep(), behavior: "smooth" }));
+        if (prev)
+          prev.addEventListener("click", () =>
+            track.scrollBy({ left: -cardStep(), behavior: "smooth" }),
+          );
+        if (next)
+          next.addEventListener("click", () =>
+            track.scrollBy({ left: cardStep(), behavior: "smooth" }),
+          );
         document.addEventListener("keydown", (e) => {
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
           const r = track.getBoundingClientRect();
           const inView = r.top < window.innerHeight && r.bottom > 0;
           if (!inView) return;
-          if (e.key === "ArrowLeft") track.scrollBy({ left: -cardStep(), behavior: "smooth" });
-          if (e.key === "ArrowRight") track.scrollBy({ left: cardStep(), behavior: "smooth" });
+          if (e.key === "ArrowLeft")
+            track.scrollBy({ left: -cardStep(), behavior: "smooth" });
+          if (e.key === "ArrowRight")
+            track.scrollBy({ left: cardStep(), behavior: "smooth" });
         });
       })();
 
@@ -1643,7 +1739,10 @@
       hamburger.addEventListener("click", (e) => {
         e.stopPropagation();
         dropdownMenu.classList.toggle("active");
-        hamburger.setAttribute("aria-expanded", dropdownMenu.classList.contains("active"));
+        hamburger.setAttribute(
+          "aria-expanded",
+          dropdownMenu.classList.contains("active"),
+        );
       });
 
       document.addEventListener("click", (e) => {
