@@ -19,6 +19,10 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./IMAGES/Stasher-logo-.webp" />
+    <meta name="theme-color" content="#0a1030" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Person","name":"Calvin Kamara","alternateName":"STASHER / ckay.png","jobTitle":"Graphic Designer & Game Developer","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"knowsAbout":["Brand Identity","Poster Design","Blender 3D","UX/UI","Videography"],"sameAs":["https://github.com/kamara-png","https://www.linkedin.com/in/calvin-kamara-1b20b440b"]}
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
@@ -46,6 +50,8 @@
       >
         &times;
       </button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
       <figure class="lightbox-figure">
         <img
           class="lightbox-img"
@@ -54,6 +60,10 @@
           alt="Expanded portfolio artwork"
         />
         <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+        <div class="lightbox-meta">
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+          <a class="lightbox-download" id="lightbox-download" href="#" download>Download</a>
+        </div>
       </figure>
     </div>
 
@@ -61,7 +71,7 @@
     <div class="dropdown-menu" id="dropdown-menu">
       <ul>
         <li><a href="#about" onclick="closeDropdown()">About</a></li>
-        <li><a href="#projects" onclick="closeDropdown()">Projects</a></li>
+        <li><a href="#lab" onclick="closeDropdown()">Lab</a></li>
         <li><a href="#posters" onclick="closeDropdown()">Poster Art</a></li>
         <li><a href="#logos" onclick="closeDropdown()">Logos</a></li>
         <li>
@@ -70,13 +80,12 @@
         <li><a href="#mock-ups" onclick="closeDropdown()">Mock Ups</a></li>
         <li><a href="#promos" onclick="closeDropdown()">Promos</a></li>
         <li><a href="#services" onclick="closeDropdown()">Services</a></li>
-        x
         <li><a href="#contact" onclick="closeDropdown()">Contact Me</a></li>
       </ul>
     </div>
 
     <!-- Hamburger (mobile only) -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="dropdown-menu">
       &#9776;
     </button>
 
@@ -91,7 +100,7 @@
       <div class="nav-glass">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#lab">Lab</a></li>
           <li><a href="#posters">Posters</a></li>
           <li><a href="#logos">Logos</a></li>
           <li><a href="#album-covers">Covers</a></li>
@@ -324,68 +333,78 @@
       <div class="section-title">
         <h3>What Clients Say</h3>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card glass">
-          <p class="testimonial-text">
-            "Calvin completely transformed our brand. The logo he designed for Q
-            Lounge was exactly what we had imagined — clean, bold, and
-            timeless."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">KM</div>
-            <div>
-              <span class="author-name">Kelvin Musembi</span>
-              <span class="author-role">Owner, Q Lounge</span>
+      <div class="testi-carousel">
+        <button class="testi-arrow testi-prev" id="testi-prev" aria-label="Previous testimonials">&#8592;</button>
+        <div class="testimonials-grid testi-track" id="testi-track">
+          <div class="testimonial-card glass">
+            <p class="testimonial-text">
+              "Calvin completely transformed our brand. The logo he designed for Q
+              Lounge was exactly what we had imagined — clean, bold, and
+              timeless."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">KM</div>
+              <div>
+                <span class="author-name">Kelvin Musembi</span>
+                <span class="author-role">Owner, Q Lounge</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="testimonial-card glass">
-          <p class="testimonial-text">
-            "Working with Calvin was seamless. He understood our vision for
-            Generation Now instantly and delivered something that felt fresh and
-            authentic."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <img src="./IMAGES/mum pfp.webp" alt="Marylin Kamara" />
-            </div>
-            <div>
-              <span class="author-name">Marylin Kamara</span>
-              <span class="author-role">Co-founder, Generation Now</span>
+          <div class="testimonial-card glass">
+            <p class="testimonial-text">
+              "Working with Calvin was seamless. He understood our vision for
+              Generation Now instantly and delivered something that felt fresh and
+              authentic."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="./IMAGES/mum pfp.webp" alt="Marylin Kamara" />
+              </div>
+              <div>
+                <span class="author-name">Marylin Kamara</span>
+                <span class="author-role">Co-founder, Generation Now</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="testimonial-card glass">
-          <p class="testimonial-text">
-            "The album cover Calvin created for us got more compliments than the
-            music itself. Incredibly talented and easy to work with."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <img src="./IMAGES/vasc0.webp" alt="Zachariah Vasco" />
+          <div class="testimonial-card glass">
+            <p class="testimonial-text">
+              "The album cover Calvin created for us got more compliments than the
+              music itself. Incredibly talented and easy to work with."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="./IMAGES/vasc0.webp" alt="Zachariah Vasco" />
+              </div>
+              <div>
+                <span class="author-name">Zachariah Vasco</span>
+                <span class="author-role">Recording Artist</span>
+              </div>
             </div>
-            <div>
-              <span class="author-name">Zachariah Vasco</span>
-              <span class="author-role">Recording Artist</span>
+          </div>
+
+          <div class="testimonial-card glass">
+            <p class="testimonial-text">
+              "Calvin gave my releases a whole new look. Every cover felt like
+              an event — bold, clean, and built for the feed."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SX</div>
+              <div>
+                <span class="author-name">Spinx</span>
+                <span class="author-role">Recording Artist</span>
+              </div>
             </div>
           </div>
         </div>
+        <button class="testi-arrow testi-next" id="testi-next" aria-label="Next testimonials">&#8594;</button>
       </div>
     </section>
 
     <!-- Project Cards -->
     <section class="projects" data-aos="fade-up">
-      <div class="glass card card-with-img">
-        <div class="card-thumb">
-          <img
-            loading="lazy"
-            src="./IMAGES/qlounge.webp"
-            alt="Q Lounge logo — upscale brand identity"
-            data-caption="Q Lounge — logo and brand identity"
-          />
-        </div>
+      <div class="glass card">
         <h3>Q Lounge</h3>
         <p class="card-category">
           Brand Identity • Logo + Guidelines + Signage
@@ -400,15 +419,7 @@
         </p>
       </div>
 
-      <div class="glass card card-with-img">
-        <div class="card-thumb">
-          <img
-            loading="lazy"
-            src="./IMAGES/duo.webp"
-            alt="duo++ Y2K fashion logo with chrome texture"
-            data-caption="duo++ — Y2K fashion identity"
-          />
-        </div>
+      <div class="glass card">
         <h3>duo++</h3>
         <p class="card-category">Y2K Fashion • Identity + Apparel Graphics</p>
         <p class="card-desc">
@@ -420,15 +431,7 @@
         </p>
       </div>
 
-      <div class="glass card card-with-img">
-        <div class="card-thumb">
-          <img
-            loading="lazy"
-            src="./IMAGES/generationnow.webp"
-            alt="Generation Now soft minimal mental health branding"
-            data-caption="Generation Now — mental health branding"
-          />
-        </div>
+      <div class="glass card">
         <h3>Generation Now</h3>
         <p class="card-category">Mental Health Branding • Logo + Social Kit</p>
         <p class="card-desc">
@@ -440,15 +443,7 @@
         </p>
       </div>
 
-      <div class="glass card card-with-img">
-        <div class="card-thumb">
-          <img
-            loading="lazy"
-            src="./IMAGES/Stasher-logo-.webp"
-            alt="STASHER Ckay.png personal creative brand logo"
-            data-caption="Ckay.png / STASHER — personal creative brand"
-          />
-        </div>
+      <div class="glass card">
         <h3>Ckay.png / STASHER</h3>
         <p class="card-category">
           Personal Brand • Posters + Motion + Identity
@@ -464,47 +459,86 @@
       </div>
     </section>
 
-    <!-- Projects  -->
-    <section id="projects">
-      <div class="projects-container">
-        <div class="reveal">
-          <div class="section-label">Selected work</div>
-          <h2 class="section-title">Projects that I'm proud of</h2>
+    <!-- Lab (merged Projects + Game Lab: featured case + Tendo) -->
+    <section id="lab" class="about-section" data-aos="fade-up">
+      <div class="glass lab-panel">
+        <div class="lab-head">
+          <div>
+            <div class="section-label">Lab</div>
+            <h2 class="section-title-left">Selected work &amp; experiments.</h2>
+            <p class="about-text">
+              The pieces I'm proudest of — a Blender case study plus an app
+              identity — with the full galleries below. 3D &amp; code bench
+              alongside KCA coursework.
+            </p>
+            <div class="about-tags">
+              <span class="project-tag">Blender 3D</span>
+              <span class="project-tag">Cycles</span>
+              <span class="project-tag">UX / App Identity</span>
+              <span class="project-tag">C++ / Python</span>
+            </div>
+          </div>
+          <a class="cv-download-btn cv-secondary lab-github" href="https://github.com/kamara-png" target="_blank" rel="noopener">GitHub — kamara-png</a>
         </div>
 
-        <div class="projects-grid reveal">
-          <a
-            class="glass-card project-card featured"
-            href="project-details.html"
-          >
-            <div class="project-thumb project-thumb-img">
+        <div class="lab-cards">
+          <a class="glass-card lab-card" href="project-details.html">
+            <div class="lab-card-img">
               <img
                 loading="lazy"
                 src="./IMAGES/porsche 3d model.jpg"
                 alt="Porsche realism redesign — Blender 3D render study"
               />
-              <div class="project-thumb-badge">Featured Case study</div>
+              <span class="project-thumb-badge">Case study</span>
             </div>
-            <div class="project-info">
+            <div class="lab-card-body">
               <div class="project-cat">Blender • 3D Car Realism Study</div>
               <div class="project-name">Porsche Realism Redesign</div>
-              <div class="project-desc">
+              <p class="project-desc">
                 Ground-up automotive scene: proportion blocking, materials,
                 lighting and hero renders for a luxury concept.
-              </div>
-            </div>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="project-tag">Blender</span>
-                <span class="project-tag">3D Modeling</span>
-                <span class="project-tag">Lighting</span>
-              </div>
+              </p>
               <span class="project-open-btn">
                 View case study <span class="project-arrow">→</span>
               </span>
             </div>
           </a>
+
+          <div class="glass-card lab-card">
+            <div class="lab-card-imgs">
+              <img
+                loading="lazy"
+                src="./IMAGES/tendo-app-logo.webp"
+                alt="Tendo app logo mark"
+                data-caption="Tendo app logo mark"
+              />
+              <img
+                loading="lazy"
+                src="./IMAGES/Tendo-app.webp"
+                alt="Tendo app full lockup"
+                data-caption="Tendo app full lockup"
+              />
+            </div>
+            <div class="lab-card-body">
+              <div class="project-cat">UX / App Identity • Logo + Lockup + Icon</div>
+              <div class="project-name">Tendo</div>
+              <p class="project-desc">
+                App identity built to stay clean at small sizes — mark, full
+                lockup and app icon with a simple, friendly system.
+                EDIT ME: one line on what Tendo does + deliverables.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">Logo</span>
+                <span class="project-tag">App Icon</span>
+              </div>
+              <span class="lab-card-cta">
+                <a class="cv-download-btn" href="#logos">More info in Logos →</a>
+              </span>
+            </div>
+          </div>
         </div>
+        <p class="lab-note">Porsche next: 10-sec turntable + wireframe vs shaded. Tendo next: Figma link + screens. Ask via contact.</p>
       </div>
     </section>
 
@@ -1418,15 +1452,13 @@
       </div>
     </section>
 
-    <div class="toast" id="toast">
-      Message sent! I'll get back to you shortly.
-    </div>
+    <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
 
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-links">
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <a href="#lab">Lab</a>
           <a href="#services">Services</a>
           <a href="#process">FAQ</a>
           <a href="#contact">Contact</a>
@@ -1443,20 +1475,47 @@
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
 
-      AOS.init({ duration: 800, once: true, offset: 80 });
+      if (window.AOS) AOS.init({ duration: 800, once: true, offset: 80 });
 
-      // Lightbox with captions (masonry + card thumbs)
+      // Lightbox with captions + prev/next + counter + download + swipe (additive)
       const overlay = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
       const lightboxCaption = document.getElementById("lightbox-caption");
+      const lightboxCounter = document.getElementById("lightbox-counter");
+      const lightboxDownload = document.getElementById("lightbox-download");
       const closeBtn = document.getElementById("lightbox-close");
+      const prevBtn = document.getElementById("lightbox-prev");
+      const nextBtn = document.getElementById("lightbox-next");
+      let galleryImgs = [];
+      let lightboxIndex = 0;
 
+      function collectGallery() {
+        galleryImgs = Array.from(
+          document.querySelectorAll(".masonry-item img, .lab-card img")
+        );
+      }
       function openLightbox(src, alt, caption) {
-        lightboxImg.src = src;
-        lightboxImg.alt = alt || "Expanded portfolio artwork";
-        if (lightboxCaption) lightboxCaption.textContent = caption || alt || "";
+        collectGallery();
+        lightboxIndex = Math.max(
+          0,
+          galleryImgs.findIndex((im) => im.src === src)
+        );
+        showAt(lightboxIndex);
         overlay.classList.add("active");
         document.body.style.overflow = "hidden";
+      }
+      function showAt(i) {
+        if (!galleryImgs.length) collectGallery();
+        if (!galleryImgs.length) return;
+        lightboxIndex = (i + galleryImgs.length) % galleryImgs.length;
+        const im = galleryImgs[lightboxIndex];
+        lightboxImg.src = im.src;
+        lightboxImg.alt = im.alt || "Expanded portfolio artwork";
+        if (lightboxCaption)
+          lightboxCaption.textContent = im.dataset.caption || im.alt || "";
+        if (lightboxCounter)
+          lightboxCounter.textContent = lightboxIndex + 1 + " / " + galleryImgs.length;
+        if (lightboxDownload) lightboxDownload.href = im.src;
       }
       function closeLightbox() {
         overlay.classList.remove("active");
@@ -1464,23 +1523,39 @@
       }
 
       document
-        .querySelectorAll(".masonry-item img, .card-thumb img")
+        .querySelectorAll(".masonry-item img, .lab-card img")
         .forEach((img) => {
           img.style.cursor = "pointer";
-          img.addEventListener("click", () => {
+          img.addEventListener("click", (e) => {
+            if (img.closest("a")) e.preventDefault();
             openLightbox(img.src, img.alt, img.dataset.caption);
           });
         });
 
       closeBtn.addEventListener("click", closeLightbox);
+      if (prevBtn) prevBtn.addEventListener("click", (e) => { e.stopPropagation(); showAt(lightboxIndex - 1); });
+      if (nextBtn) nextBtn.addEventListener("click", (e) => { e.stopPropagation(); showAt(lightboxIndex + 1); });
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeLightbox();
       });
       document.addEventListener("keydown", (e) => {
+        if (!overlay.classList.contains("active")) return;
         if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") showAt(lightboxIndex - 1);
+        if (e.key === "ArrowRight") showAt(lightboxIndex + 1);
       });
+      let touchX = null;
+      overlay.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+      overlay.addEventListener("touchend", (e) => {
+        if (touchX === null) return;
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (dx > 40) showAt(lightboxIndex - 1);
+        if (dx < -40) showAt(lightboxIndex + 1);
+        touchX = null;
+      }, { passive: true });
 
-      // Progress bar
+      // Progress bar + back-to-top (additive)
+      const backTop = document.getElementById("back-top");
       window.addEventListener("scroll", () => {
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight =
@@ -1488,9 +1563,59 @@
           document.documentElement.clientHeight;
         document.getElementById("progress-bar").style.width =
           (scrollTop / scrollHeight) * 100 + "%";
-      });
+        if (backTop) backTop.classList.toggle("show", scrollTop > 600);
+      }, { passive: true });
+      if (backTop) backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-      // Toast placeholder (contact uses direct links + CV download)
+      // Count-up stats (respects existing numbers)
+      (function () {
+        const nums = document.querySelectorAll(".stat-number");
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((en) => {
+            if (!en.isIntersecting) return;
+            const el = en.target;
+            io.unobserve(el);
+            const raw = el.textContent.trim();
+            const target = parseInt(raw.replace(/\D/g, ""), 10);
+            if (isNaN(target)) return;
+            const suffix = raw.replace(/[0-9]/g, "");
+            let start = null;
+            function step(ts) {
+              if (!start) start = ts;
+              const p = Math.min(1, (ts - start) / 900);
+              el.textContent = Math.round(target * p) + suffix;
+              if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          });
+        }, { threshold: 0.6 });
+        nums.forEach((n) => io.observe(n));
+      })();
+
+      // Testimonial carousel with arrows + swipe (no dots)
+      (function () {
+        const track = document.getElementById("testi-track");
+        if (!track) return;
+        const cards = Array.from(track.querySelectorAll(".testimonial-card"));
+        const prev = document.getElementById("testi-prev");
+        const next = document.getElementById("testi-next");
+        function cardStep() {
+          const card = cards[0];
+          if (!card) return 320;
+          const gap = parseFloat(getComputedStyle(track).gap) || 20;
+          return card.getBoundingClientRect().width + gap;
+        }
+        if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -cardStep(), behavior: "smooth" }));
+        if (next) next.addEventListener("click", () => track.scrollBy({ left: cardStep(), behavior: "smooth" }));
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+          const r = track.getBoundingClientRect();
+          const inView = r.top < window.innerHeight && r.bottom > 0;
+          if (!inView) return;
+          if (e.key === "ArrowLeft") track.scrollBy({ left: -cardStep(), behavior: "smooth" });
+          if (e.key === "ArrowRight") track.scrollBy({ left: cardStep(), behavior: "smooth" });
+        });
+      })();
 
       // Active nav highlight
       const sections = document.querySelectorAll("section[id]");
@@ -1518,6 +1643,7 @@
       hamburger.addEventListener("click", (e) => {
         e.stopPropagation();
         dropdownMenu.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", dropdownMenu.classList.contains("active"));
       });
 
       document.addEventListener("click", (e) => {

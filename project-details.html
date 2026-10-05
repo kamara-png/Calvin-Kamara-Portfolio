@@ -7,6 +7,17 @@
       name="description"
       content="Porsche realism redesign — Blender 3D case study by Calvin Kamara: modeling, materials, lighting and renders."
     />
+    <meta property="og:title" content="Porsche Realism Redesign — Calvin Kamara" />
+    <meta
+      property="og:description"
+      content="Blender 3D car study: proportion blocking, PBR materials, HDRI + studio lighting, hero renders."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="./IMAGES/porsche 3d model.jpg" />
+    <meta name="theme-color" content="#0a1030" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"CreativeWork","name":"Porsche Realism Redesign","creator":{"@type":"Person","name":"Calvin Kamara"},"about":["Blender 3D","PBR materials","Lighting","Automotive render"]}
+    </script>
     <title>Porsche - Realism Redesign | Calvin Kamara</title>
     <link rel="icon" type="image/png" href="./IMAGES/Stasher-logo-.webp" />
     <link rel="stylesheet" href="style.css" />
@@ -16,6 +27,40 @@
     />
   </head>
   <body>
+    <div id="progress-bar"></div>
+
+    <div
+      class="lightbox-overlay"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close viewer">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Expanded case study render" />
+        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+        <div class="lightbox-meta">
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+          <a class="lightbox-download" id="lightbox-download" href="#" download>Download</a>
+        </div>
+      </figure>
+    </div>
+
+    <header class="case-topbar">
+      <a href="index.html" class="case-brand">
+        <img src="./IMAGES/Stasher-logo-.webp" alt="Calvin Kamara logo" />
+        <span>Calvin Kamara</span>
+      </a>
+      <nav class="case-topnav" aria-label="Case study">
+        <a href="index.html#lab">Lab</a>
+        <a href="index.html#logos">Logos</a>
+        <a href="index.html#contact" class="nav-contact-btn">Contact Me</a>
+      </nav>
+    </header>
+
     <main class="project-page">
       <article class="project-details-card project-page-card">
         <p class="project-kicker">Project case study — Blender • 3D • WIP</p>
@@ -26,17 +71,23 @@
           alongside KCA Gaming &amp; Animation Tech coursework.
         </p>
 
+        <dl class="case-specs">
+          <div><dt>Role</dt><dd>3D / Lookdev</dd></div>
+          <div><dt>Year</dt><dd>2025 — Present</dd></div>
+          <div><dt>Tools</dt><dd>Blender, Cycles, PBR, HDRI</dd></div>
+          <div><dt>Status</dt><dd>WIP — turntable next</dd></div>
+        </dl>
+
         <div class="case-hero">
           <img
-            src="./IMAGES/f1-startrooper-2.webp"
-            alt="Porsche realism redesign hero render study"
-            loading="lazy"
+            id="case-hero-img"
+            src="./IMAGES/porsche 3d model.jpg"
+            alt="Porsche realism redesign hero render study — click to expand"
+            loading="eager"
+            fetchpriority="high"
+            data-caption="Porsche Realism Redesign — hero render. Click to expand."
           />
-          <div class="case-hero-row">
-            <img src="./IMAGES/icarus.webp" alt="Hard-surface detail render test" loading="lazy" />
-            <img src="./IMAGES/ember.webp" alt="Cinematic lighting test render" loading="lazy" />
-          </div>
-          <p class="case-caption">Hero + detail tests. Final car model renders in progress — stills shown are lighting/material studies from the same workflow.</p>
+          <p class="case-caption">Hero render — click to expand. Proportion blocking first, then PBR paint with clearcoat, HDRI + studio lights, bevels and depth of field.</p>
         </div>
 
         <div class="project-detail-grid">
@@ -100,14 +151,79 @@
         </div>
 
         <div class="case-nav">
-          <a class="project-page-back" href="index.html#projects">
-            ← Back to projects
+          <a class="project-page-back" href="index.html#lab">
+            ← Back to Lab
           </a>
           <a class="project-page-back project-page-next" href="index.html#posters">
             More work →
           </a>
         </div>
+
+        <div class="case-cta glass">
+          <div>
+            <h2>Want the .blend breakdown?</h2>
+            <p>Wireframe vs shaded, lighting setup and material notes on request.</p>
+          </div>
+          <a class="cv-download-btn" href="index.html#contact">Ask me</a>
+        </div>
       </article>
     </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#lab">Lab</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <p>© <span id="current-year"></span> Calvin Kamara • STASHER / ckay.png • Nairobi, Kenya / remote worldwide.</p>
+      </div>
+    </footer>
+
+    <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+
+    <script>
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+      // Progress + back-to-top
+      const backTop = document.getElementById("back-top");
+      window.addEventListener("scroll", () => {
+        const st = document.documentElement.scrollTop;
+        const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const bar = document.getElementById("progress-bar");
+        if (bar) bar.style.width = (st / sh) * 100 + "%";
+        if (backTop) backTop.classList.toggle("show", st > 600);
+      }, { passive: true });
+      if (backTop) backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      // Single-image lightbox for hero
+      (function () {
+        const overlay = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
+        const cap = document.getElementById("lightbox-caption");
+        const cnt = document.getElementById("lightbox-counter");
+        const dl = document.getElementById("lightbox-download");
+        const hero = document.getElementById("case-hero-img");
+        if (!overlay || !hero) return;
+        function open() {
+          img.src = hero.src;
+          img.alt = hero.alt;
+          if (cap) cap.textContent = hero.dataset.caption || hero.alt;
+          if (cnt) cnt.textContent = "1 / 1";
+          if (dl) dl.href = hero.src;
+          overlay.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+        function close() {
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+        hero.style.cursor = "zoom-in";
+        hero.addEventListener("click", open);
+        document.getElementById("lightbox-close").addEventListener("click", close);
+        document.getElementById("lightbox-prev").style.display = "none";
+        document.getElementById("lightbox-next").style.display = "none";
+        overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+      })();
+    </script>
   </body>
 </html>
