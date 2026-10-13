@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tendo - a habit, todo and streak tracker app case study by Calvin Kamara: React Native, Expo Router, TypeScript, alarm reminders, statistics and theming."
+    />
+    <meta
+      property="og:title"
+      content="Tendo - Habit, Todo & Streak Tracker | Calvin Kamara"
+    />
+    <meta
+      property="og:description"
+      content="Mobile app case study: todos, alarm reminders, streaks, notes and statistics built with Expo / React Native."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="./IMAGES/tendo-app.svg" />
+    <meta name="theme-color" content="#17212b" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Tendo - Habit, Todo & Streak Tracker",
+        "creator": { "@type": "Person", "name": "Calvin Kamara" },
+        "about": [
+          "React Native",
+          "Expo Router",
+          "TypeScript",
+          "Local notifications",
+          "App theming"
+        ]
+      }
+    </script>
+    <title>Tendo - Habit, Todo & Streak Tracker | Calvin Kamara</title>
+    <link rel="icon" type="image/png" href="./IMAGES/Stasher-logo-.webp" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+
+    <div
+      class="lightbox-overlay"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <button
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="Close viewer"
+      >
+        &times;
+      </button>
+      <button
+        class="lightbox-nav lightbox-prev"
+        id="lightbox-prev"
+        aria-label="Previous image"
+      >
+        &#8592;
+      </button>
+      <button
+        class="lightbox-nav lightbox-next"
+        id="lightbox-next"
+        aria-label="Next image"
+      >
+        &#8594;
+      </button>
+      <figure class="lightbox-figure">
+        <img
+          class="lightbox-img"
+          id="lightbox-img"
+          src=""
+          alt="Expanded case study render"
+        />
+        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+        <div class="lightbox-meta">
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+        </div>
+      </figure>
+    </div>
+
+    <main class="project-page">
+      <article
+        class="glass project-details-card project-page-card"
+        data-aos="fade-up"
+      >
+        <p class="project-kicker">Project case study</p>
+        <h1>Tendo</h1>
+        <p class="project-intro">
+          A calm, local-first tracker for todos, habits, streaks and notes,
+          built with React Native and Expo Router. It pairs a soft, glassy
+          interface with real system alarm reminders - all without the noise of
+          cloud sync or account management - plus statistics that make
+          consistency visible.
+        </p>
+
+        <div class="case-hero">
+          <img
+            id="case-hero-img"
+            src="./IMAGES/tendo-app.svg"
+            alt="Tendo todo list and streaks screens shown on two phones"
+            loading="eager"
+            fetchpriority="high"
+            data-caption="Tendo — Todos and Streaks. Click to expand."
+          />
+        </div>
+
+        <div class="project-detail-grid">
+          <div>
+            <h2>Overview</h2>
+            <p>
+              Tendo answers one question well: did I keep up today? It combines
+              a todo list, habit streaks and quick notes in one quiet,
+              dark-friendly app, then rewards consistency with a stats screen.
+              Everything is stored on device - no account, no sync, no noise.
+            </p>
+          </div>
+
+          <div>
+            <h2>Key features</h2>
+            <ul>
+              <li>Todos grouped by day, with edit, delete and undo</li>
+              <li>Per-todo alarms with snooze (10 min / 1 hour) and dismiss</li>
+              <li>Habit streaks with a weekly check-in grid</li>
+              <li>Notes with word and character tracking</li>
+              <li>
+                Statistics: completion ring, week-over-week, 10-week heatmap
+              </li>
+              <li>Six accent themes, light / dark / system</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>Tech stack</h2>
+            <p>
+              Expo SDK 57 / React Native 0.86 with TypeScript. File-based routes
+              with Expo Router, AsyncStorage for persistence, Expo Notifications
+              with custom alarm sounds, and Expo Haptics for tactile feedback.
+              Streak maths is covered by Jest unit tests.
+            </p>
+            <div class="about-tags">
+              <span class="project-tag">Expo Router</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Notifications</span>
+              <span class="project-tag">Jest</span>
+            </div>
+          </div>
+
+          <div>
+            <h2>Architecture</h2>
+            <p>
+              Screens live in <code>src/app/(tabs)</code> (Todos, Notes,
+              Streaks, Stats, Settings). Pure logic sits in
+              <code>src/lib</code> — dates, streak calculations, storage,
+              reminders and settings — and the entire look is generated from a
+              single themed style factory in <code>src/styles</code>.
+            </p>
+          </div>
+
+          <div>
+            <h2>Reminder reliability</h2>
+            <p>
+              Alarms are the tricky part of a habit app. Tendo schedules real
+              system notifications with custom chime and alarm sounds, but also
+              keeps an in-app fallback that fires while the app is open (for
+              Expo Go and web). A response listener handles snooze and dismiss
+              taps straight from the notification.
+            </p>
+          </div>
+
+          <div>
+            <h2>Design system</h2>
+            <p>
+              Rather than hard-coded colours, the theme is derived: picking an
+              accent tints the backgrounds, surfaces and borders toward that hue
+              while text stays neutral. One function produces the whole palette,
+              so six accents work in both light and dark without extra assets.
+            </p>
+          </div>
+
+          <div>
+            <h2>Challenges &amp; learnings</h2>
+            <p>
+              Streak logic is easy to get subtly wrong, so current and longest
+              streaks were written as pure, tested functions — including the
+              rule that today's unfinished streak doesn't break yesterday's run.
+              Balancing system notifications against in-app alerts without
+              double-firing taught careful state design.
+            </p>
+          </div>
+
+          <div>
+            <h2>Status &amp; deliverables</h2>
+            <p>
+              Shipped as v1.0.0 (<code>com.kamarack.tendo</code>) with an
+              Android build produced through EAS, alongside the source and unit
+              tests. Screens above are rendered from the real app theme. Source
+              and the build are available on request.
+            </p>
+          </div>
+        </div>
+
+        <div class="case-nav">
+          <a class="project-page-back" href="index.html#lab"> Back to Labs </a>
+          <a class="project-page-back" href="budgeter-case-study.html">
+            Previous: Budgeter
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#lab">Labs</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <p>
+          © <span id="current-year"></span> Calvin Kamara • STASHER / ckay.png •
+          Nairobi, Kenya / remote worldwide.
+        </p>
+      </div>
+    </footer>
+
+    <button class="back-top" id="back-top" aria-label="Back to top">
+      &#8593;
+    </button>
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+      if (window.AOS) AOS.init({ duration: 800, once: true, offset: 80 });
+      // Progress + back-to-top
+      const backTop = document.getElementById("back-top");
+      window.addEventListener(
+        "scroll",
+        () => {
+          const st = document.documentElement.scrollTop;
+          const sh =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const bar = document.getElementById("progress-bar");
+          if (bar) bar.style.width = (st / sh) * 100 + "%";
+          if (backTop) backTop.classList.toggle("show", st > 600);
+        },
+        { passive: true },
+      );
+      if (backTop)
+        backTop.addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" }),
+        );
+      // Single-image lightbox for hero
+      (function () {
+        const overlay = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
+        const cap = document.getElementById("lightbox-caption");
+        const cnt = document.getElementById("lightbox-counter");
+        const hero = document.getElementById("case-hero-img");
+        if (!overlay || !hero) return;
+        function open() {
+          img.src = hero.src;
+          img.alt = hero.alt;
+          if (cap) cap.textContent = hero.dataset.caption || hero.alt;
+          if (cnt) cnt.textContent = "1 / 1";
+          overlay.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+        function close() {
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+        hero.style.cursor = "zoom-in";
+        hero.addEventListener("click", open);
+        document
+          .getElementById("lightbox-close")
+          .addEventListener("click", close);
+        document.getElementById("lightbox-prev").style.display = "none";
+        document.getElementById("lightbox-next").style.display = "none";
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) close();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") close();
+        });
+      })();
+    </script>
+  </body>
+</html>

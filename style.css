@@ -1503,7 +1503,8 @@ input:focus-visible {
   .lab-cards {
     grid-template-columns: 1fr;
   }
-  .lab-card-img {
+  .lab-card-img,
+  .lab-card--featured .lab-card-img {
     height: 200px;
   }
   .lab-card-imgs {
@@ -1543,6 +1544,15 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+.lab-card--featured {
+  grid-column: 1 / -1;
+}
+.lab-card--featured .lab-card-img {
+  height: 320px;
+}
+.lab-card .lab-card-body .project-open-btn {
+  margin-top: 6px;
 }
 a.lab-card:hover {
   transform: translateY(-6px);

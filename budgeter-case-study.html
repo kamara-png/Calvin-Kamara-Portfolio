@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Budgeter-  a local-first expense and budget tracker app case study by Calvin Kamara: React Native, Expo Router, TypeScript, Zustand and data visualisation."
+    />
+    <meta
+      property="og:title"
+      content="Budgeter - Expense & Budget Tracker | Calvin Kamara"
+    />
+    <meta
+      property="og:description"
+      content="Mobile app case study: transactions, per-category budgets, charts and offline storage built with Expo / React Native."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="./IMAGES/budgeter-app.svg" />
+    <meta name="theme-color" content="#17212b" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Budgeter - Expense & Budget Tracker",
+        "creator": { "@type": "Person", "name": "Calvin Kamara" },
+        "about": [
+          "React Native",
+          "Expo Router",
+          "TypeScript",
+          "Mobile app design",
+          "Data visualisation"
+        ]
+      }
+    </script>
+    <title>Budgeter - Expense & Budget Tracker | Calvin Kamara</title>
+    <link rel="icon" type="image/png" href="./IMAGES/Stasher-logo-.webp" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+
+    <div
+      class="lightbox-overlay"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <button
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="Close viewer"
+      >
+        &times;
+      </button>
+      <button
+        class="lightbox-nav lightbox-prev"
+        id="lightbox-prev"
+        aria-label="Previous image"
+      >
+        &#8592;
+      </button>
+      <button
+        class="lightbox-nav lightbox-next"
+        id="lightbox-next"
+        aria-label="Next image"
+      >
+        &#8594;
+      </button>
+      <figure class="lightbox-figure">
+        <img
+          class="lightbox-img"
+          id="lightbox-img"
+          src=""
+          alt="Expanded case study render"
+        />
+        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+        <div class="lightbox-meta">
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+        </div>
+      </figure>
+    </div>
+
+    <main class="project-page">
+      <article
+        class="glass project-details-card project-page-card"
+        data-aos="fade-up"
+      >
+        <p class="project-kicker">Project case study</p>
+        <h1>Budgeter</h1>
+        <p class="project-intro">
+          A local-first expense and budget tracker built with React Native, Expo
+          Router and TypeScript. Track spending and income, set monthly budgets
+          per category, and see it all in charts - no accounts, no server,
+          everything stays on the device.
+        </p>
+
+        <div class="case-hero">
+          <img
+            id="case-hero-img"
+            src="./IMAGES/budgeter-app.svg"
+            alt="Budgeter dashboard and stats screens shown on two phones"
+            loading="eager"
+            fetchpriority="high"
+            data-caption="Budgeter - dashboard and stats. Click to expand."
+          />
+        </div>
+
+        <div class="project-detail-grid">
+          <div>
+            <h2>Overview</h2>
+            <p>
+              Most budgeting apps want an account and a connection. Budgeter was
+              built the opposite way: a fast, offline-first tracker you can use
+              one-handed. The goal was a clean daily loop:log a transaction, see
+              what's left this month, and know when a category is running hot -
+              with a premium, modern look.
+            </p>
+          </div>
+
+          <div>
+            <h2>Key features</h2>
+            <ul>
+              <li>Add, edit and delete expenses and income</li>
+              <li>Dashboard with spent, income, net and budget left</li>
+              <li>Per-category monthly budgets with live progress bars</li>
+              <li>Search and filters by day, note, category and type</li>
+              <li>Donut chart by category plus a 6-month bar chart</li>
+              <li>Light, dark and system themes with an accent picker</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>Tech stack</h2>
+            <p>
+              Expo SDK 57 / React Native 0.86 with TypeScript in strict mode.
+              File-based navigation via Expo Router, Zustand with
+              <code>persist</code> over AsyncStorage for local state, and
+              react-native-gifted-charts + SVG for visualisation.
+            </p>
+            <div class="about-tags">
+              <span class="project-tag">Expo Router</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Zustand</span>
+              <span class="project-tag">AsyncStorage</span>
+            </div>
+          </div>
+
+          <div>
+            <h2>Architecture</h2>
+            <p>
+              Routes live in <code>src/app</code> (a tab group plus an add/edit
+              transaction modal). Reusable UI sits in
+              <code>src/components</code>, and all money logic - monthly totals,
+              budget rows, category breakdowns and the monthly series - is
+              isolated in <code>src/utils/aggregate.ts</code> so screens stay
+              thin.
+            </p>
+          </div>
+
+          <div>
+            <h2>Design system</h2>
+            <p>
+              A single indigo primary drives the interface, with expense/income
+              semantics kept separate from branding colour and fourteen
+              switchable accents. Category colours double as the chart legend,
+              so the ring, the progress bars and the list all read as one
+              system.
+            </p>
+          </div>
+
+          <div>
+            <h2>Challenges &amp; learnings</h2>
+            <p>
+              Keeping aggregation pure and testable was the core lesson: month
+              windows, per-category spend and the rolling six-month series all
+              derive from one transactions array. Persisting partial state with
+              Zustand meant the app survives reloads without a backend.
+            </p>
+          </div>
+
+          <div>
+            <h2>Roadmap</h2>
+            <ul>
+              <li>Recurring transactions</li>
+              <li>CSV export</li>
+              <li>Multiple wallets / accounts</li>
+              <li>Custom categories</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>Status &amp; deliverables</h2>
+            <p>
+              Working Expo app (Android, iOS and web) with source and a written
+              README. Screens above are rendered from the real app theme. Source
+              and a running build are available on request.
+            </p>
+          </div>
+        </div>
+
+        <div class="case-nav">
+          <a class="project-page-back" href="index.html#lab"> Back to Labs </a>
+          <a class="project-page-back" href="tendo-case-study.html">
+            Next: Tendo
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#lab">Labs</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <p>
+          © <span id="current-year"></span> Calvin Kamara • STASHER / ckay.png •
+          Nairobi, Kenya / remote worldwide.
+        </p>
+      </div>
+    </footer>
+
+    <button class="back-top" id="back-top" aria-label="Back to top">
+      &#8593;
+    </button>
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+      if (window.AOS) AOS.init({ duration: 800, once: true, offset: 80 });
+      // Progress + back-to-top
+      const backTop = document.getElementById("back-top");
+      window.addEventListener(
+        "scroll",
+        () => {
+          const st = document.documentElement.scrollTop;
+          const sh =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const bar = document.getElementById("progress-bar");
+          if (bar) bar.style.width = (st / sh) * 100 + "%";
+          if (backTop) backTop.classList.toggle("show", st > 600);
+        },
+        { passive: true },
+      );
+      if (backTop)
+        backTop.addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" }),
+        );
+      // Single-image lightbox for hero
+      (function () {
+        const overlay = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
+        const cap = document.getElementById("lightbox-caption");
+        const cnt = document.getElementById("lightbox-counter");
+        const hero = document.getElementById("case-hero-img");
+        if (!overlay || !hero) return;
+        function open() {
+          img.src = hero.src;
+          img.alt = hero.alt;
+          if (cap) cap.textContent = hero.dataset.caption || hero.alt;
+          if (cnt) cnt.textContent = "1 / 1";
+          overlay.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+        function close() {
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+        hero.style.cursor = "zoom-in";
+        hero.addEventListener("click", open);
+        document
+          .getElementById("lightbox-close")
+          .addEventListener("click", close);
+        document.getElementById("lightbox-prev").style.display = "none";
+        document.getElementById("lightbox-next").style.display = "none";
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) close();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") close();
+        });
+      })();
+    </script>
+  </body>
+</html>
