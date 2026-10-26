@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>Calvin Kamara — Graphic Designer &amp; Game Developer</title>
-    <link rel="icon" type="image/png" href="./IMAGES/Stasher-logo-.webp" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./IMAGES/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./IMAGES/favicon-192.png" />
+    <link rel="apple-touch-icon" href="./IMAGES/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -18,7 +20,12 @@
       content="Brand Identity • Posters • 3D & Game Dev • UX/UI • Videography. Nairobi / Remote."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./IMAGES/Stasher-logo-.webp" />
+    <meta property="og:image" content="./IMAGES/stasher-social.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="STASHER — Calvin Kamara, Graphic Designer & Game Developer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="./IMAGES/stasher-social.jpg" />
     <meta name="theme-color" content="#17212b" />
     <script type="application/ld+json">
       {
@@ -129,8 +136,21 @@
     </button>
 
     <header>
-      <a href="#" class="logo">
-        <img src="./IMAGES/Stasher-logo-.webp" alt="Calvin Logo" />
+      <a href="#" class="logo" aria-label="Stasher — back to top">
+        <img
+          class="logo-mascot"
+          src="./IMAGES/stasher-mascot.svg"
+          alt=""
+          width="1000"
+          height="1000"
+        />
+        <img
+          class="logo-wordmark"
+          src="./IMAGES/stasher-wordmark.webp"
+          alt="Stasher"
+          width="928"
+          height="200"
+        />
       </a>
     </header>
 
@@ -289,6 +309,51 @@
             >
             <span class="timeline-desc"
               >Competitive basketball, university leagues with ANU & KCA.</span
+            >
+          </div>
+        </div>
+
+        <!-- Brand story — the raccoon mascot + why the logo looks like this -->
+        <div class="brand-story reveal">
+          <figure class="brand-story-art">
+            <img
+              src="./IMAGES/stasher-mascot.svg"
+              alt="Stash, the STASHER raccoon mascot"
+              loading="lazy"
+            />
+            <figcaption>Stash - the <b>STASHER</b> raccoon</figcaption>
+          </figure>
+          <div class="brand-story-copy">
+            <div class="section-label">The Mark</div>
+            <h3>Why a raccoon?</h3>
+            <p>
+              Raccoons stash things. They gather the good finds, hide them
+              somewhere safe and bring them back out when they matter which is
+              exactly how I work with references, ideas and half-finished
+              sketches. The name <b>STASHER</b> came first, the raccoon
+              followed.
+            </p>
+            <p>
+              <b>Stash</b> is built from low-poly facets, the same way I model
+              in Blender, so the mark carries the 3D and game development side
+              of my work alongside the graphic design. Every shade is pulled
+              from the logo itself, the purple slab of the wordmark and its
+              ice-blue lettering so the mascot, the logotype and everything they
+              sign off on share one palette.
+            </p>
+            <div class="brand-swatches">
+              <span class="brand-swatch" style="--swatch: #664499"
+                >Stasher Purple <em>#664499</em></span
+              >
+              <span class="brand-swatch" style="--swatch: #afdde8"
+                >Stash Blue <em>#AFDDE8</em></span
+              >
+              <span class="brand-swatch" style="--swatch: #eaf7fb"
+                >Facet White <em>#EAF7FB</em></span
+              >
+            </div>
+            <a class="cv-download-btn brandkit-cta" href="brand-kit.html"
+              >See the full brand kit &rarr;</a
             >
           </div>
         </div>
@@ -1473,6 +1538,15 @@
     <!-- Contact -->
     <section id="contact" class="contact-section">
       <div class="glass contact-card" data-aos="fade-up">
+        <div class="contact-mascot">
+          <img
+            src="./IMAGES/stasher-mascot.svg"
+            alt="Stash, the STASHER raccoon"
+            width="1000"
+            height="1000"
+          />
+          <p class="contact-mascot-line">Stash your brief here</p>
+        </div>
         <h2 class="contact-title">Let's Work Together</h2>
         <p>
           Got a project in mind? Reach out through any of the platforms below.
@@ -1590,6 +1664,7 @@
         <div class="footer-links">
           <a href="#about">About</a>
           <a href="#lab">Labs</a>
+          <a href="brand-kit.html">Brand Kit</a>
           <!-- PRICES HIDDEN per feedback — uncomment to restore <a href="#services">Services</a> -->
           <a href="#process">FAQ</a>
           <a href="#contact">Contact</a>
